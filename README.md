@@ -26,7 +26,9 @@ login and navigation. These videos were lifesavers:
 ## Future Edits
 - Gonna make the login functionality better to use. Still getting used to it.
 - Planning to add more interactive bits to the UI.
-  
+
+## Link to Live Product
+https://chipkrypt-frontend.vercel.app/
 
 
 
