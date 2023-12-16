@@ -16,7 +16,7 @@ export function FavoritesProvider({ children }) {
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
       return newFavorites;
     });
-  };
+  }
 
   function removeFavorite(cryptoToRemove) {
     setFavorites(prev => {
@@ -24,7 +24,7 @@ export function FavoritesProvider({ children }) {
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
       return newFavorites;
     });
-  };
+  }
 
   return (
     <FavoritesContext.Provider value={{ favorites, addFavorite, removeFavorite }}>

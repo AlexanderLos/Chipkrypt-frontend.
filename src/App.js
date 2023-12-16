@@ -6,13 +6,13 @@ import Login from './components/Login';
 import HomePage from './components/HomePage';
 import PriceTracker from './components/PriceTracker';
 import CryptoDetails from './components/CryptoDetails';
-import News from './components/News'; 
-import Swap from './components/Swap'; 
+import News from './components/News';
+import Swap from './components/Swap';
 import Nav from './components/Nav';
 import './css/App.css';
 
 const AppContent = () => {
-  const { currentUser } = useAuth();  
+  const { currentUser } = useAuth();
 
   return (
     <Router>
@@ -20,14 +20,10 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/news" element={<News />} /> // Add News route
-        <Route path="/swap" element={<Swap />} /> // Add Swap route
-        {currentUser && (
-          <>
-            <Route path="/price-tracker" element={<PriceTracker />} />
-            <Route path="/crypto/:symbol" element={<CryptoDetails />} />
-          </>
-        )}
+        <Route path="/news" element={<News />} />
+        <Route path="/swap" element={<Swap />} />
+        <Route path="/price-tracker" element={currentUser ? <PriceTracker /> : <Login />} />
+        <Route path="/crypto/:symbol" element={currentUser ? <CryptoDetails /> : <Login />} />
       </Routes>
     </Router>
   );
